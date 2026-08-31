@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Menu for Keerthan's Home Food.">
+  <title>Menu | Keerthan's Home Food</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="top-brand" href="index.html" aria-label="Keerthan's Home Food home"><img src="cook-mascot.png" alt=""><span>Keerthan's <strong>Home Food</strong></span></a>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a><a class="active" href="menu.html">Menu</a><a href="about.html">About</a><a href="order.html">Orders</a></nav>
+    <a class="order-bar" id="orders" href="order.html" aria-label="Your order: 0 items, total 0 rupees"><span class="bag-icon">Bag</span><span><strong id="order-count">0 items</strong><small id="order-total">Rs. 0</small></span></a>
+  </header>
+  <main>
+    <section class="menu-section" id="menu">
+      <a class="back-home" href="index.html">&larr; Home</a>
+      <div class="section-heading"><div><p class="eyebrow">Made for every craving</p><h1>Our delicious menu</h1></div><p>Freshly prepared food, served warm.<br>All prices are in Indian rupees.</p></div>
+      <a class="menu-cart-bag" href="order.html" aria-label="View your cart and place an order">
+        <span class="menu-cart-icon" aria-hidden="true">Bag</span>
+        <span class="menu-cart-copy"><small>Your food bag</small><strong><span data-order-count>0 items</span> selected</strong></span>
+        <span class="menu-cart-total" data-order-total>Rs. 0</span>
+        <span class="menu-cart-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <form class="menu-search" role="search">
+        <label for="dish-search">Search the menu</label>
+        <div class="search-controls">
+          <input id="dish-search" type="search" placeholder="Search dishes, ingredients, or categories" autocomplete="off" aria-describedby="search-status">
+          <button class="search-button" type="submit"><span aria-hidden="true">&#128269;</span> Search</button>
+        </div>
+        <p class="search-status" id="search-status" aria-live="polite">Showing all dishes</p>
+      </form>
+      <div class="menu-grid">
+        <article class="food-card"><img src="dosa.jpeg" alt="Crispy masala dosa served with sambar and coconut chutney"><div class="card-content"><div class="card-label">South Indian</div><div class="food-title"><h3>Masala Dosa</h3><strong>&#8377;120</strong></div><p>Crispy golden dosa, potato masala, sambar and coconut chutney.</p><button class="add-item" data-price="120">Add to order <span>+</span></button></div></article>
+        <article class="food-card"><img src="idli.jpg" alt="Soft idli served with sambar and chutney"><div class="card-content"><div class="card-label">Breakfast</div><div class="food-title"><h3>Idli Plate</h3><strong>&#8377;80</strong></div><p>Soft steamed idlis served warm with sambar and fresh coconut chutney.</p><button class="add-item" data-price="80">Add to order <span>+</span></button></div></article>
+        <article class="food-card"><img src="telugu-meals-new.jpg" alt="Traditional Telugu vegetarian meal served on a banana leaf"><div class="card-content"><div class="card-label">House favourite</div><div class="food-title"><h3>Telugu Full Meals</h3><strong>&#8377;180</strong></div><p>Rice, pappu, sambar, curry, pickle, curd and crunchy papad.</p><button class="add-item" data-price="180">Add to order <span>+</span></button></div></article>
+        <article class="food-card"><img src="gulab-jamun.jpg" alt="Warm gulab jamun served in sugar syrup"><div class="card-content"><div class="card-label">Dessert</div><div class="food-title"><h3>Gulab Jamun</h3><strong>&#8377;90</strong></div><p>Soft khoya dumplings soaked in warm cardamom sugar syrup.</p><button class="add-item" data-price="90">Add to order <span>+</span></button></div></article>
+        <article class="food-card"><img src="semiya.jpeg" alt="Semiya payasam served in a traditional bowl"><div class="card-content"><div class="card-label">Telugu sweet</div><div class="food-title"><h3>Semiya Payasam</h3><strong>&#8377;95</strong></div><p>Vermicelli payasam simmered with milk, sugar, cashews and raisins.</p><button class="add-item" data-price="95">Add to order <span>+</span></button></div></article>
+        <article class="food-card"><img src="paramannam.jpg" alt="Bellam paramannam made with rice, jaggery and ghee"><div class="card-content"><div class="card-label">Festival sweet</div><div class="food-title"><h3>Bellam Paramannam</h3><strong>&#8377;110</strong></div><p>Traditional sweet rice cooked with jaggery, milk, ghee and dry fruits.</p><button class="add-item" data-price="110">Add to order <span>+</span></button></div></article>
+        <article class="food-card"><img src="paneer-pizza-new.jpg" alt="Paneer and vegetable pizza with melted cheese"><div class="card-content"><div class="card-label">Pizza</div><div class="food-title"><h3>Paneer Garden Pizza</h3><strong>&#8377;249</strong></div><p>Paneer, peppers, onions and golden cheese on a hand-tossed base.</p><button class="add-item" data-price="249">Add to order <span>+</span></button></div></article>
+        <article class="food-card"><img src="veg-burger-new.jpg" alt="Vegetarian burger with crispy patty and fries"><div class="card-content"><div class="card-label">Burgers</div><div class="food-title"><h3>Classic Veg Burger</h3><strong>&#8377;159</strong></div><p>Spiced crispy patty, fresh salad, cheese and a side of fries.</p><button class="add-item" data-price="159">Add to order <span>+</span></button></div></article>
+      </div>
+      <div class="menu-subsection">
+        <div class="subsection-heading">
+          <p class="eyebrow">Fresh sips</p>
+          <h2>Mocktails</h2>
+        </div>
+        <div class="menu-grid">
+          <article class="food-card"><img src="mango-mint-mocktail.png" alt="Mango mint mocktail served chilled with mint leaves and lime"><div class="card-content"><div class="card-label">Mocktail</div><div class="food-title"><h3>Mango Mint Cooler</h3><strong>&#8377;130</strong></div><p>Sweet mango, fresh mint, lime and ice blended into a bright summer cooler.</p><button class="add-item" data-price="130">Add to order <span>+</span></button></div></article>
+          <article class="food-card"><img src="watermelon-basil-mocktail.png" alt="Watermelon basil mocktail with crushed ice and basil leaves"><div class="card-content"><div class="card-label">Mocktail</div><div class="food-title"><h3>Watermelon Basil Splash</h3><strong>&#8377;140</strong></div><p>Refreshing watermelon, basil and crushed ice with a soft sparkling finish.</p><button class="add-item" data-price="140">Add to order <span>+</span></button></div></article>
+          <article class="food-card"><img src="lemon-ginger-fizz-mocktail.png" alt="Lemon ginger fizz mocktail with lemon slices and mint"><div class="card-content"><div class="card-label">Mocktail</div><div class="food-title"><h3>Lemon Ginger Fizz</h3><strong>&#8377;125</strong></div><p>Zesty lemon, ginger and soda with mint for a crisp and naturally cool drink.</p><button class="add-item" data-price="125">Add to order <span>+</span></button></div></article>
+        </div>
+      </div>
+      <p class="no-search-results" hidden>No dishes match your search. Try a different name, ingredient, or category.</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
