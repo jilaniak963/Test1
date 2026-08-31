@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fresh home-style food delivered by Keerthan's Home Food.">
+  <title>Keerthan's Home Food</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="top-brand" href="#home" aria-label="Keerthan's Home Food home"><img src="cook-mascot.png" alt=""><span>Keerthan's <strong>Home Food</strong></span></a>
+    <nav aria-label="Main navigation"><a class="active" href="index.html">Home</a><a href="menu.html">Menu</a><a href="about.html">About</a><a href="order.html">Orders</a></nav>
+    <a class="order-bar" id="orders" href="order.html" aria-label="Your order: 0 items, total 0 rupees"><span class="bag-icon">Bag</span><span><strong id="order-count">0 items</strong><small id="order-total">Rs. 0</small></span></a>
+  </header>
+  <main class="page-shell">
+    <section class="showcase-card" id="home">
+      <div class="card-chrome" aria-hidden="true">
+        <span class="chrome-dot chrome-red"></span>
+        <span class="chrome-dot chrome-gold"></span>
+        <span class="chrome-dot chrome-green"></span>
+      </div>
+      <section class="hero heritage-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Traditional recipes, made fresh</p>
+          <h1>Fresh Telugu<br>Home Food</h1>
+          <div class="hero-divider" aria-hidden="true"><span></span></div>
+          <p class="intro">Traditional recipes, homemade goodness, and the kind of meals that feel like they came straight from home.</p>
+          <div class="hero-actions"><a class="button primary" href="menu.html">Explore Menu <span>&rarr;</span></a><a class="button secondary" href="about.html">Why people love us</a></div>
+          <div class="trust-row"><span>Fresh ingredients</span><span>Home-style recipes</span><span>Comfort on every plate</span></div>
+        </div>
+        <div class="hero-art hero-platter" aria-label="Fresh South Indian home food">
+          <span class="leaf-spray leaf-spray-top" aria-hidden="true"></span>
+          <span class="leaf-spray leaf-spray-bottom" aria-hidden="true"></span>
+          <img src="telugu-meals-new.jpg" alt="Fresh Telugu meal on a banana leaf">
+          <img class="hero-side-dish hero-side-dish-one" src="idli.jpg" alt="Soft idli side dish">
+          <img class="hero-side-dish hero-side-dish-two" src="dosa.jpeg" alt="Masala dosa side dish">
+          <div class="hero-note"><strong>Made fresh</strong><br>with love, every day</div>
+        </div>
+      </section>
+    </section>
+    <section class="dish-showcase menu-dish-showcase home-dish-showcase" aria-labelledby="bowls-title">
+      <div class="dish-showcase-copy">
+        <p class="eyebrow">Bowls and dishes</p>
+        <h2 id="bowls-title">Sweet bowls, classic plates, and homely favourites.</h2>
+        <p>Every meal is designed to feel familiar, generous and satisfying.</p>
+        <a class="button primary" href="menu.html">Explore the menu <span>&rarr;</span></a>
+      </div>
+      <div class="dish-grid">
+        <article class="dish-card"><img src="semiya.jpeg" alt="Semiya payasam served in a traditional bowl"><div class="dish-card-copy"><span class="dish-label">Sweet bowl</span><h3>Semiya Payasam</h3></div></article>
+        <article class="dish-card"><img src="paramannam.jpg" alt="Bellam paramannam in a brass bowl"><div class="dish-card-copy"><span class="dish-label">Festival special</span><h3>Bellam Paramannam</h3></div></article>
+        <article class="dish-card dish-card-wide"><img src="gulab-jamun.jpg" alt="Gulab jamun dessert served warm"><div class="dish-card-copy"><span class="dish-label">Dessert</span><h3>Gulab Jamun</h3></div></article>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
