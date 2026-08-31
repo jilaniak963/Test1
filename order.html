@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Place an order with Keekos Home Food.">
+  <title>Place Order | Keekos Home Food</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="order-page">
+  <header class="topbar">
+    <a class="top-brand" href="index.html" aria-label="Keekos Home Food home"><img src="cook-mascot.png" alt=""><span>Keekos <strong>Home Food</strong></span></a>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="about.html">About</a><a class="active" href="order.html">Orders</a></nav>
+    <a class="order-bar" href="#order-form" aria-label="Your order: 0 items, total 0 rupees"><span class="bag-icon">Bag</span><span><strong id="order-count">0 items</strong><small id="order-total">Rs. 0</small></span></a>
+  </header>
+  <main class="order-page-main">
+    <section class="order-hero">
+      <div><p class="eyebrow">Fresh food, delivered with care</p><h1>Your home-food order</h1><p>Choose your favourites from the menu, then share your delivery details below.</p><a class="button secondary" href="menu.html">&larr; Back to menu</a></div>
+      <img src="keekos-restaurant-anime.png" alt="Cute illustration of a welcoming Keekos Home Food restaurant cook">
+    </section>
+    <section class="checkout-section" aria-labelledby="checkout-title">
+      <div class="checkout-intro">
+        <p class="eyebrow">Almost there</p>
+        <h2 id="checkout-title">Place your order</h2>
+        <p>Share your delivery details and we will prepare your home-style meal with care.</p>
+        <div class="checkout-summary" aria-live="polite">
+          <h3>Your cart</h3>
+          <ul class="checkout-items" id="checkout-items"><li>Your cart is empty. Add a dish from the menu.</li></ul>
+          <p class="checkout-total">Total <strong id="checkout-total">Rs. 0</strong></p>
+        </div>
+      </div>
+      <form class="order-form" id="order-form">
+        <div class="form-row">
+          <label for="customer-name">Your name<input id="customer-name" name="name" type="text" autocomplete="name" placeholder="Enter your full name" required></label>
+          <label for="customer-phone">Phone number<input id="customer-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit mobile number" pattern="[0-9]{10}" required></label>
+        </div>
+        <label for="customer-address">Delivery address<textarea id="customer-address" name="address" autocomplete="street-address" placeholder="House / flat number, street, area and city" required></textarea></label>
+        <div class="form-row">
+          <label for="customer-pincode">Pincode<input id="customer-pincode" name="pincode" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="6-digit pincode" pattern="[0-9]{6}" required></label>
+          <fieldset class="delivery-type"><legend>Deliver to</legend><label><input type="radio" name="delivery-type" value="Home" checked> Home</label><label><input type="radio" name="delivery-type" value="Office"> Office</label></fieldset>
+        </div>
+        <fieldset class="order-customizations">
+          <legend>Food preferences</legend>
+          <p>Have a special request? Write it below and we will do our best to help.</p>
+          <label for="special-instructions">Special instructions<textarea id="special-instructions" name="special-instructions" placeholder="Example: Please make the dosa extra crispy."></textarea></label>
+        </fieldset>
+        <button class="place-order" type="submit">Place order <span aria-hidden="true">&rarr;</span></button>
+        <p class="form-message" id="form-message" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
