@@ -792,6 +792,145 @@
       z-index:2;
     }
 
+    /* ANIMATED MOMENTS */
+    .moments{
+      background:linear-gradient(180deg,#ffffff 0%,#f4f9ff 100%);
+      overflow:hidden;
+    }
+
+    .moments-stage{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:34px;
+      align-items:center;
+    }
+
+    .moments-copy{
+      max-width:520px;
+    }
+
+    .moments-copy h2{
+      margin-bottom:18px;
+    }
+
+    .moments-copy p{
+      color:var(--muted);
+      margin-bottom:24px;
+    }
+
+    .motion-pills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .motion-pills span{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid #deebf9;
+      color:var(--navy);
+      font-weight:800;
+      box-shadow:0 10px 22px rgba(31,65,110,.06);
+    }
+
+    .animated-gallery{
+      min-height:520px;
+      position:relative;
+    }
+
+    .motion-photo{
+      position:absolute;
+      overflow:hidden;
+      border-radius:24px;
+      box-shadow:0 24px 52px rgba(15,44,82,.18);
+      border:8px solid #fff;
+      background:#dceeff;
+      transform:translate3d(0,var(--shift,0px),0) rotate(var(--tilt,0deg));
+      transition:transform .35s ease, box-shadow .35s ease;
+      isolation:isolate;
+    }
+
+    .motion-photo:hover{
+      transform:translate3d(0,calc(var(--shift,0px) - 10px),0) rotate(0deg) scale(1.02);
+      box-shadow:0 32px 62px rgba(15,44,82,.24);
+      z-index:5;
+    }
+
+    .motion-photo::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(110deg,transparent 0%,rgba(255,255,255,.55) 45%,transparent 62%);
+      transform:translateX(-130%);
+      animation:shine 5.5s ease-in-out infinite;
+      z-index:2;
+    }
+
+    .motion-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:saturate(1.08) contrast(1.02);
+      transition:transform .7s ease;
+    }
+
+    .motion-photo:hover img{
+      transform:scale(1.08);
+    }
+
+    .motion-photo strong{
+      position:absolute;
+      left:16px;
+      right:16px;
+      bottom:14px;
+      z-index:3;
+      color:#fff;
+      font-size:.98rem;
+      text-shadow:0 2px 14px rgba(0,0,0,.45);
+    }
+
+    .motion-photo.primary{
+      width:66%;
+      height:62%;
+      left:0;
+      top:46px;
+      --tilt:-3deg;
+      animation:driftOne 6s ease-in-out infinite;
+    }
+
+    .motion-photo.secondary{
+      width:48%;
+      height:42%;
+      right:0;
+      top:0;
+      --tilt:5deg;
+      animation:driftTwo 7s ease-in-out infinite;
+    }
+
+    .motion-photo.tertiary{
+      width:52%;
+      height:42%;
+      right:34px;
+      bottom:16px;
+      --tilt:3deg;
+      animation:driftThree 6.6s ease-in-out infinite;
+    }
+
+    .spark-ring{
+      position:absolute;
+      width:96px;
+      height:96px;
+      right:44%;
+      bottom:26%;
+      border:3px solid rgba(246,183,60,.75);
+      border-radius:50%;
+      animation:pulseRing 2.6s ease-out infinite;
+    }
+
     /* FEATURE BAND */
     .feature-band{
       padding:26px 0 90px;
@@ -1049,10 +1188,36 @@
       50%{transform:translateY(-14px)}
     }
 
+    @keyframes shine{
+      0%,48%{transform:translateX(-130%)}
+      62%,100%{transform:translateX(130%)}
+    }
+
+    @keyframes driftOne{
+      0%,100%{margin-top:0}
+      50%{margin-top:-12px}
+    }
+
+    @keyframes driftTwo{
+      0%,100%{margin-top:0}
+      50%{margin-top:16px}
+    }
+
+    @keyframes driftThree{
+      0%,100%{margin-bottom:0}
+      50%{margin-bottom:14px}
+    }
+
+    @keyframes pulseRing{
+      0%{transform:scale(.82);opacity:.85}
+      100%{transform:scale(1.45);opacity:0}
+    }
+
     @media (max-width: 900px){
       .hero-grid,
       .about-grid,
       .feature-box,
+      .moments-stage,
       .admission-grid,
       .contact-grid{
         grid-template-columns:1fr;
@@ -1073,6 +1238,10 @@
       .cards,
       .testimonial-grid{
         grid-template-columns:1fr 1fr;
+      }
+
+      .animated-gallery{
+        min-height:500px;
       }
 
       .contact-grid{
@@ -1138,8 +1307,31 @@
       .cards,
       .testimonial-grid,
       .about-list,
+      .moments-stage,
       .feature-points{
         grid-template-columns:1fr;
+      }
+
+      .animated-gallery{
+        min-height:auto;
+        display:grid;
+        gap:18px;
+      }
+
+      .motion-photo,
+      .motion-photo.primary,
+      .motion-photo.secondary,
+      .motion-photo.tertiary{
+        position:relative;
+        inset:auto;
+        width:100%;
+        height:auto;
+        aspect-ratio:16/10;
+        transform:none;
+      }
+
+      .spark-ring{
+        display:none;
       }
 
       .feature-box{
@@ -1351,6 +1543,43 @@
             <h3>Leadership Lab</h3>
             <p>Public speaking, entrepreneurship, teamwork, student councils, projects, and leadership challenges.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section moments" id="moments">
+      <div class="container moments-stage">
+        <div class="moments-copy reveal">
+          <div class="eyebrow">Life in Motion</div>
+          <h2>Animated moments from a bright school day.</h2>
+          <p class="lead">
+            From collaborative classrooms to open campus spaces, every corner is designed to feel active,
+            welcoming, and full of possibility.
+          </p>
+          <div class="motion-pills">
+            <span>Creative classrooms</span>
+            <span>Campus energy</span>
+            <span>Hands-on learning</span>
+          </div>
+        </div>
+
+        <div class="animated-gallery reveal" aria-label="Animated school photo gallery">
+          <figure class="motion-photo primary">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80" alt="Students learning together in a classroom">
+            <strong>Curious minds at work</strong>
+          </figure>
+
+          <figure class="motion-photo secondary">
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=760&q=80" alt="Bright school library with learning spaces">
+            <strong>Spaces made for discovery</strong>
+          </figure>
+
+          <figure class="motion-photo tertiary">
+            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=760&q=80" alt="Teacher helping young students with school work">
+            <strong>Guided, joyful learning</strong>
+          </figure>
+
+          <div class="spark-ring" aria-hidden="true"></div>
         </div>
       </div>
     </section>
